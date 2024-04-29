@@ -18,7 +18,11 @@ p{
 }
 
 body {
-  margin: 0;
+  max-width: 2000px;
+  min-height: 100vh;
+  margin: auto;
+  background-color: black;
+  background-image: radial-gradient(circle at 0% 75%, rgba(255,255,255, 0.1), transparent);
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 15px;
     min-height: 90vh;
     background-color: black;
     background-image: 
@@ -21,12 +22,14 @@
     align-items: center;
     grid-template-columns: 1fr 0.25fr 1fr;
     padding: 15px;
+    padding-bottom: 0px; /* o espacamento entre cada item vai ser feito pelo gap do intro-section */
 }
 
 .intro-section__header .head__email{
     font-family: monospace;
     flex-grow: 2;
     font-size: 1.25em;
+    word-break: break-all;
 }
 .intro-section__header .head__email:hover{
     cursor: pointer;
@@ -42,11 +45,12 @@
 .intro-section__header nav{
     display: flex;
     justify-content: end;
+    flex-wrap: wrap;
     gap: 5px;
     flex-grow: 1;
     font-family: monospace;
     font-size: 1.25em;
-}
+    font-size: clamp(0.8em, 3.0vw, 1.25em);}
 
 .intro-section__header nav p{
     padding: 5px 10px;
@@ -63,7 +67,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        flex-wrap: wrap;
+        /* flex-wrap: wrap; */
     }
 
     .intro-section__header .head__email{
@@ -78,7 +82,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    justify-content: center;
+    flex-grow: 1;
+    gap: max(5vh, 40px);
+    padding: 0px 15px;
     font-family: 'Lusitana', serif;
 }
 
@@ -86,16 +93,16 @@
     text-align: center;
 }
 
-.intro-section__intro p:nth-child(1){ font-size: 2.75em; }
-.intro-section__intro p:nth-child(2){ font-size: 4.5em; }
+.intro-section__intro p:nth-child(1){ font-size: clamp(1.5em, 4.75vw, 2.25em); } /* 2.75em */
+.intro-section__intro p:nth-child(2){ font-size: clamp(2.5em, 8vw, 4.5em); } /* 4.5em */
 .intro-section__intro > div{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
 }
-.intro-section__intro > div p:nth-child(1){ font-size: 2.25em; }
-.intro-section__intro > div p:nth-child(2){ font-size: 1.25em; }
+.intro-section__intro > div p:nth-child(1){ font-size: clamp(1.5em, 4.5vw, 2.5em); } /* 2.25em */
+.intro-section__intro > div p:nth-child(2){ font-size: clamp(1.0em, 3.25vw, 1.75em); } /* 1.25em */
 
 
 
@@ -106,8 +113,10 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 30px;
+    column-gap: 30px;
+    row-gap: 10px;
     padding-bottom: 40px;
+    font-size: clamp(0.75em, 3.0vw, 1.25em);
 }
 
 .intro-section__contact > div{
