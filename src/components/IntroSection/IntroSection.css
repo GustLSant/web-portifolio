@@ -1,0 +1,130 @@
+.intro-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 90vh;
+    background-color: black;
+    background-image: 
+        radial-gradient(circle at 0% 75%, rgba(255,255,255, 0.1), transparent);
+        /* radial-gradient(circle at top right, rgba(255,255,255, 0.05), transparent); */
+    border-radius: 0px 0px 30px 30px;
+    color: white;
+    box-shadow: var(--box-shadow-01);
+}
+
+
+/* HEADER ##################################################################################################################################### */
+
+.intro-section__header{
+    display: grid;
+    column-gap: 10px;
+    align-items: center;
+    grid-template-columns: 1fr 0.25fr 1fr;
+    padding: 15px;
+}
+
+.intro-section__header .head__email{
+    font-family: monospace;
+    flex-grow: 2;
+    font-size: 1.25em;
+}
+.intro-section__header .head__email:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.intro-section__header .header__logo{
+    text-align: center;
+    font-family: 'Mea Culpa', sans-serif;
+    font-size: 1.75em;
+}
+
+.intro-section__header nav{
+    display: flex;
+    justify-content: end;
+    gap: 5px;
+    flex-grow: 1;
+    font-family: monospace;
+    font-size: 1.25em;
+}
+
+.intro-section__header nav p{
+    padding: 5px 10px;
+    border-radius: 2px;
+    transition: background-color var(--transition-time-01);
+}
+.intro-section__header nav p:hover{
+    background-color: var(--focus-color-01);
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    .intro-section__header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .intro-section__header .head__email{
+        display: none;
+    }
+}
+
+
+/* INTRO ###################################################################################################################################### */
+
+.intro-section__intro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    font-family: 'Lusitana', serif;
+}
+
+.intro-section__intro p{
+    text-align: center;
+}
+
+.intro-section__intro p:nth-child(1){ font-size: 2.75em; }
+.intro-section__intro p:nth-child(2){ font-size: 4.5em; }
+.intro-section__intro > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.intro-section__intro > div p:nth-child(1){ font-size: 2.25em; }
+.intro-section__intro > div p:nth-child(2){ font-size: 1.25em; }
+
+
+
+/* CONTACT SECTION ############################################################################################################################ */
+
+.intro-section__contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-bottom: 40px;
+}
+
+.intro-section__contact > div{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    /* padding: 5px 10px;
+    border-radius: 3px; */
+}
+.intro-section__contact > div:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.intro-section__contact svg{
+    font-size: 1.5em;
+}
+
+
+

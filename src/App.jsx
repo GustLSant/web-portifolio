@@ -1,9 +1,12 @@
+import IntroSection from './components/IntroSection/IntroSection';
+
 import './App.css';
+
 
 function App() {
   return (
     <div className="App">
-      <h2>App</h2>
+      <IntroSection />
     </div>
   );
 }
