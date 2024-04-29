@@ -27,3 +27,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+h2{
+  font-family: 'Lusitana', serif;
+  font-size: 2.0em;
+  font-weight: normal;
+  text-align: center;
+}

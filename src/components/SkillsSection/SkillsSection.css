@@ -1,0 +1,32 @@
+.skills-section{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: white;
+    padding: 0px 25px;
+}
+
+.skills-section__skills-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 50px;
+    row-gap: 20px;
+    font-size: 1.25em;
+}
+
+.skills-section__skills-container ul{
+    list-style-type:  "❖"; /*➤ ➢ ♦ ◈  ⧫ ❖*/
+}
+
+.skills-section__skills-container li{
+    padding: 3px 0px 3px 5px;
+}
+
+
+
+
+
+
+
+
