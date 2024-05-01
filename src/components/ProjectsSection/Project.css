@@ -1,0 +1,113 @@
+.project{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background-color: rgba(255,255,255, 0.075);
+    border-top: 1px solid var(--shine-border-color-01);
+    border-right: 1px solid var(--shine-border-color-01);
+    backdrop-filter: blur(4px);
+    box-shadow: var(--box-shadow-01);
+    /* max-width: min(70%, 800px); */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.project h3{
+    text-align: center;
+    font-family: 'Lusitana', serif;
+    font-size: 1.5em;
+    font-weight: 400;
+}
+.project h3:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.project__content-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    row-gap: 20px;
+}
+
+.project-content-container__screenshot-container{
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.project-screenshot-miniature{
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow-01);
+    z-index: 9;
+    transition: filter var(--transition-time-01);
+}
+.project-screenshot-miniature:hover{
+    cursor: pointer;
+    filter: brightness(120%);
+}
+
+.screenshot-container__select-container{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 0.75em;
+}
+
+.select-image-button.active{
+    border-radius: 50%;
+    background-color: white;
+}
+
+.select-image-button:hover{
+    cursor: pointer;
+}
+
+
+
+
+.project__text-content-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+}
+
+.project__text-buttons-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 5px;
+}
+
+.project__text-button{
+    padding: 10px 15px;
+    background-image: linear-gradient(to top, rgba(255,255,255, 0.125), transparent);
+}
+.project__text-button:hover{
+    cursor: pointer;
+    backdrop-filter: brightness(110%);
+}
+
+.project__text{
+    animation-name: TextFadeIn;
+    animation-duration: var(--transition-time-01);
+    animation-fill-mode: forwards;
+}
+
+@keyframes TextFadeIn {
+    0%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
