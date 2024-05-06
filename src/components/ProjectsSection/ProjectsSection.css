@@ -4,9 +4,6 @@
     align-items: center;
     gap: 20px;
     padding: 30px 20px;
-    background-color: black;
-    color: white;
-    background-image: radial-gradient(circle at 0% 75%, rgba(255,255,255, 0.1), transparent);
 }
 
 

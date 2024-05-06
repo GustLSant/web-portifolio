@@ -12,14 +12,14 @@ import "./ProjectsSection.css"
 function ProjectsSection() {
 
     return (
-        <div className="projects-section">
+        <div className="projects-section black-section">
             <h2>My Projects</h2>
             
             <div className="projects-container">
                 <Project 
                     label={"Weather App"} 
                     link={"https://weather-app-gustlsant.vercel.app/"} 
-                    screenshotsArray={[WeatherAppScreenshot01, WeatherAppScreenshot02, WeatherAppScreenshot03]}
+                    miniScreenshotsArray={[WeatherAppScreenshot01, WeatherAppScreenshot02, WeatherAppScreenshot03]}
                     contents={[
                         "Descrição do aplicativo",
                         "Features do aplicativo",
@@ -29,7 +29,7 @@ function ProjectsSection() {
                 <Project 
                     label={"ToDo App"} 
                     link={"https://gustlsant-todoapp.vercel.app/"} 
-                    screenshotsArray={[TodoAppScreenShot02, TodoAppScreenShot01, TodoAppScreenShot03, TodoAppScreenShot04]}
+                    miniScreenshotsArray={[TodoAppScreenShot02, TodoAppScreenShot01, TodoAppScreenShot03, TodoAppScreenShot04]}
                     contents={[
                         "Descrição do aplicativo",
                         "Features do aplicativo",

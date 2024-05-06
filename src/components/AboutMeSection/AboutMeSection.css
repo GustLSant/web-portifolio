@@ -1,0 +1,36 @@
+.about-me-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 20px;
+}
+
+.about-me-section div{
+    display: flex;
+    align-items: flex-start;
+    /* flex-wrap: wrap-reverse; */
+    gap: 20px;
+    max-width: 75%;
+    font-size: 1.1em;
+}
+
+.about-me-section div > img{
+    width: min(50%, 300px);
+}
+
+@media (max-width: 720px) {
+    .about-me-section div{
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+    }
+
+    .about-me-section div > img{
+        width: min(100%, 300px);
+        height: auto;
+    }
+
+    .about-me-section div > p{
+        text-align: center;
+    }
+}

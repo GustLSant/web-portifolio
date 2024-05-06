@@ -32,6 +32,9 @@
     row-gap: 20px;
 }
 
+
+/* ## SCREENSHOTS CONTAINER ####################################################################################################################### */
+
 .project-content-container__screenshot-container{
     max-width: 300px;
     display: flex;
@@ -40,42 +43,38 @@
     gap: 10px;
 }
 
+.project__div-scroll-screenshots{
+    display: flex;
+    gap: 5px;
+    overflow-x: scroll;
+    padding-bottom: 4px;
+    background-color: rgba(0,0,0, 0.2);
+    box-shadow: var(--box-shadow-01);
+    user-select: none;
+}
+.project__div-scroll-screenshots:hover{ cursor: grab; }
+.project__div-scroll-screenshots.active:hover{ cursor: grabbing; }
+
 .project-screenshot-miniature{
     width: 100%;
     border-radius: 5px;
-    box-shadow: var(--box-shadow-01);
     z-index: 9;
     transition: filter var(--transition-time-01);
 }
-.project-screenshot-miniature:hover{
-    cursor: pointer;
-    filter: brightness(120%);
-}
 
-.screenshot-container__select-container{
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+.project-screenshots-container__scroll-indicator{
     font-size: 0.75em;
-}
-
-.select-image-button.active{
-    border-radius: 50%;
-    background-color: white;
-}
-
-.select-image-button:hover{
-    cursor: pointer;
+    opacity: 75%;
 }
 
 
-
+/* ## TEXT CONTAINER ############################################################################################################################## */
 
 .project__text-content-container{
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-width: 400px;
+    max-width: 410px;
 }
 
 .project__text-buttons-container{
@@ -91,6 +90,11 @@
 .project__text-button{
     padding: 10px 15px;
     background-image: linear-gradient(to top, rgba(255,255,255, 0.125), transparent);
+    flex-grow: 1;
+    /* transition: backdrop-filter var(--transition-time-01); */
+}
+.project__text-button.active{
+    backdrop-filter: brightness(110%);
 }
 .project__text-button:hover{
     cursor: pointer;

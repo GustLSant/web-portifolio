@@ -1,30 +1,48 @@
 import React from "react";
 import PropTypes from "prop-types"
-import { GoCircle } from "react-icons/go";
 import "./Project.css"
 
 
 function Project(props){
-    const [currentScreenshotIdx, setCurrentScreenshotIdx] = React.useState(0)
-    const [screenshotButtons, setScreenshotButtons] = React.useState([])
     const [currentTab, setCurrentTab] = React.useState(0)
+    const divScreenshots = React.useRef(null)
+    
+    const[isDragging, setIsDragging] = React.useState(false);
+    let prevClientX = 0;
+    let wasScrolled = false
 
 
-    // build change screenshot buttons
-    React.useEffect(()=>{
-        let newArray = []
-        for (let i=0; i<props.screenshotsArray.length; i++) {
-            newArray.push(
-                <GoCircle key={i} className={`select-image-button ${(currentScreenshotIdx === i) ? "active" : ""}`} onClick={()=>{setCurrentScreenshotIdx(i)}} />
-            );
-        }
-        setScreenshotButtons(newArray)
-    }, [currentScreenshotIdx, props.screenshotsArray.length])
-
-
-    function handleClickRedirect(){
-        window.open(props.link, "blank")
+    function handleMouseDown(event){
+        setIsDragging(true)
+        wasScrolled = false
     }
+
+
+    function handleMouseUp(event){
+        setIsDragging(false)
+        if(!wasScrolled){ handleClickRedirect() }
+    }
+
+
+    function handleMouseLeave(event){ setIsDragging(false) }
+
+
+    function handleMouseMove(event){
+        if(isDragging){
+            const deltaX = event.clientX - prevClientX;
+            const scrollSpeed = 2;
+            
+            if(deltaX > 0){ divScreenshots.current.scrollLeft -= scrollSpeed; }
+            else{ divScreenshots.current.scrollLeft += scrollSpeed; }
+            wasScrolled = true
+            event.preventDefault();
+
+            prevClientX = event.clientX;
+        }
+    }
+
+
+    function handleClickRedirect(){ window.open(props.link, "blank") }
 
 
     return (
@@ -33,25 +51,39 @@ function Project(props){
             
             <div className="project__content-container">
                 <div className="project-content-container__screenshot-container">
-                    <img src={props.screenshotsArray[currentScreenshotIdx]} className="project-screenshot-miniature" onClick={handleClickRedirect} alt="project screenshot" />
-                    <div className="screenshot-container__select-container">
-                        {screenshotButtons}
+                    <div className={`project__div-scroll-screenshots ${(isDragging)?"active":""}`} ref={divScreenshots} 
+                        onMouseEnter={(e)=>{prevClientX=e.clientX}} 
+                        onMouseDown={(e)=>{handleMouseDown(e)}} 
+                        onMouseUp={(e)=>{handleMouseUp(e)}} 
+                        onMouseLeave={(e)=>{handleMouseLeave(e)}}
+                        onMouseMove={(e)=>{handleMouseMove(e)}}
+                    >
+                        {
+                            props.miniScreenshotsArray.map((item, idx)=>{
+                                return(
+                                    <img key={idx} src={item} className="project-screenshot-miniature" alt="project screenshot" />
+                                )
+                            })
+                        }
                     </div>
+                    <p className="project-screenshots-container__scroll-indicator">❮❮ Horizontal Scrolling ❯❯</p>
                 </div>
 
                 <div className="project__text-content-container">
                     <div className="project__text-buttons-container">
-                        <div className="project__text-button" onClick={()=>{setCurrentTab(0)}}>
+                        <div className={`project__text-button ${(currentTab === 0)?"active":""}`} onClick={()=>{setCurrentTab(0)}}>
                             Description
                         </div>
-                        <div className="project__text-button" onClick={()=>{setCurrentTab(1)}}>
+                        <div className={`project__text-button ${(currentTab === 1)?"active":""}`} onClick={()=>{setCurrentTab(1)}}>
                             Features
                         </div>
-                        <div className="project__text-button" onClick={()=>{setCurrentTab(2)}}>
+                        <div className={`project__text-button ${(currentTab === 2)?"active":""}`} onClick={()=>{setCurrentTab(2)}}>
                             Technologies
                         </div>
                     </div>
-                    <p className="project__text">{props.contents[currentTab]}</p>
+                    { (currentTab === 0) && <p className="project__text">{props.contents[0]}</p> }
+                    { (currentTab === 1) && <p className="project__text">{props.contents[1]}</p> }
+                    { (currentTab === 2) && <p className="project__text">{props.contents[2]}</p> }
                 </div>
             </div>
 
@@ -62,7 +94,7 @@ function Project(props){
 Project.propTypes = {
     label: PropTypes.string,
     link: PropTypes.string,
-    screenshotsArray: PropTypes.array,
+    miniScreenshotsArray: PropTypes.array,
     contents: PropTypes.array
 }
 

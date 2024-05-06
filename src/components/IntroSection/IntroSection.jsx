@@ -8,7 +8,7 @@ import './IntroSection.css'
 
 function IntroSection() {
     return (
-        <div className="intro-section">
+        <div className="intro-section black-section">
             <div className="intro-section__header">
                 <p className="head__email">GustLSantDev@gmail.com</p>
                 <p className="header__logo">GS</p>
