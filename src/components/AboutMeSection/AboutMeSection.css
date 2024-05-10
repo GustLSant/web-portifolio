@@ -3,10 +3,10 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    padding: 30px 20px;
+    padding: 40px 20px;
 }
 
-.about-me-section div{
+.about-me-section > div{
     display: flex;
     align-items: flex-start;
     /* flex-wrap: wrap-reverse; */
@@ -19,8 +19,27 @@
     width: min(50%, 300px);
 }
 
+.about-me-section__texts-container{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.about-me__contact-button{
+    font-size: 1.15em;
+    font-weight: 300;
+    padding: 10px 15px;
+    background-image: linear-gradient(to top, rgba(255,255,255, 0.125), transparent);
+    /* flex-grow: 1; */
+}
+.about-me__contact-button:hover{
+    cursor: pointer;
+    backdrop-filter: brightness(120%);
+}
+
 @media (max-width: 720px) {
-    .about-me-section div{
+    .about-me-section > div{
         flex-wrap: wrap-reverse;
         justify-content: center;
     }
@@ -30,7 +49,11 @@
         height: auto;
     }
 
-    .about-me-section div > p{
+    .about-me-section__texts-container{
+        align-items: center;
+    }
+
+    .about-me-section__texts-container p{
         text-align: center;
     }
 }

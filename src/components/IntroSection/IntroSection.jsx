@@ -2,21 +2,34 @@ import { IoLogoGithub } from "react-icons/io";
 import { IoLogoLinkedin } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 import { IoLogoWhatsapp } from "react-icons/io";
+import { animateScroll } from 'react-scroll';
 
 import './IntroSection.css'
 
 
-function IntroSection() {
+function IntroSection(){
+
+    function onSectionButtonClick(_className){
+        animateScroll.scrollTo(
+            document.getElementsByClassName(_className)[0].getBoundingClientRect().top,
+            {
+                duration: 1000,
+                smooth: 'easeInOutQuart'
+            }
+        )
+    }
+
+    
     return (
         <div className="intro-section black-section">
             <div className="intro-section__header">
                 <p className="head__email">GustLSantDev@gmail.com</p>
                 <p className="header__logo">GS</p>
                 <nav>
-                    <p>ABOUT ME</p>
-                    <p>PROJECTS</p>
-                    <p>CONTACT</p>
-                    <p>SKILLS</p>
+                    <p onClick={()=>{onSectionButtonClick("about-me-section")}}>ABOUT ME</p>
+                    <p onClick={()=>{onSectionButtonClick("projects-section")}}>PROJECTS</p>
+                    <p onClick={()=>{onSectionButtonClick("skills-section")}}>SKILLS</p>
+                    <p onClick={()=>{onSectionButtonClick("previous-xp")}}>EXPERIENCES</p>
                 </nav>
             </div>
             

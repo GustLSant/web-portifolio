@@ -4,7 +4,7 @@ import "./Project.css"
 
 
 function Project(props){
-    const [currentTab, setCurrentTab] = React.useState(0)
+    const [currentTab, setCurrentTab] = React.useState(1)
     const divScreenshots = React.useRef(null)
     
     const[isDragging, setIsDragging] = React.useState(false);
@@ -30,10 +30,13 @@ function Project(props){
     function handleMouseMove(event){
         if(isDragging){
             const deltaX = event.clientX - prevClientX;
-            const scrollSpeed = 2;
+            // const scrollSpeed = 0.01;
+            const scrollAmount = 10;
             
-            if(deltaX > 0){ divScreenshots.current.scrollLeft -= scrollSpeed; }
-            else{ divScreenshots.current.scrollLeft += scrollSpeed; }
+            // if(deltaX > 0){ divScreenshots.current.scrollLeft -= divScreenshots.current.offsetWidth * scrollSpeed; }
+            // else{ divScreenshots.current.scrollLeft += divScreenshots.current.offsetWidth * scrollSpeed; }
+            if(deltaX > 0){ divScreenshots.current.scrollLeft -= scrollAmount; }
+            else{ divScreenshots.current.scrollLeft += scrollAmount; }
             wasScrolled = true
             event.preventDefault();
 
@@ -43,7 +46,6 @@ function Project(props){
 
 
     function handleClickRedirect(){ window.open(props.link, "blank") }
-
 
     return (
         <div className="project">
@@ -81,9 +83,27 @@ function Project(props){
                             Technologies
                         </div>
                     </div>
-                    { (currentTab === 0) && <p className="project__text">{props.contents[0]}</p> }
-                    { (currentTab === 1) && <p className="project__text">{props.contents[1]}</p> }
-                    { (currentTab === 2) && <p className="project__text">{props.contents[2]}</p> }
+                    {
+                        (currentTab===0)  &&
+                        props.contents[0] && 
+                        props.contents[0].map((item, idx)=>{ return(
+                            <p key={idx} className="project__text">{item}</p>
+                        )})
+                    }
+                    {
+                        (currentTab===1)  &&
+                        props.contents[1] && 
+                        props.contents[1].map((item, idx)=>{ return(
+                            <p key={idx} className="project__text">{item}</p>
+                        )})
+                    }
+                    {
+                        (currentTab===2)  &&
+                        props.contents[2] && 
+                        props.contents[2].map((item, idx)=>{ return(
+                            <p key={idx} className="project__text">{item}</p>
+                        )})
+                    }
                 </div>
             </div>
 

@@ -106,6 +106,10 @@
     animation-duration: var(--transition-time-01);
     animation-fill-mode: forwards;
 }
+.project__text::before{
+    content: "❖";
+    margin-right: 5px;
+}
 
 @keyframes TextFadeIn {
     0%{
