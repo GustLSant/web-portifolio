@@ -12,7 +12,7 @@ function HeaderNavbar(){
 
     function onSectionButtonClick(_className){
         animateScroll.scrollTo(
-            document.getElementsByClassName(_className)[0].getBoundingClientRect().top,
+            document.getElementsByClassName(_className)[0].getBoundingClientRect().top - ((_className === "projects-section") ? 59 : 65) + window.scrollY,
             {
                 duration: 1000,
                 smooth: 'easeInOutQuart'
@@ -24,7 +24,7 @@ function HeaderNavbar(){
     return (
         <div className="header-navbar">
             
-            <div className="header-navbar__bar black-section">
+            <div className="header-navbar__bar">
                 <p className="header-navbar__logo">GS</p>
                 {(isOpen)?<MdKeyboardDoubleArrowRight onClick={()=>{setIsOpen(!isOpen)}} />:<MdMenu onClick={()=>{setIsOpen(!isOpen)}} />}
             </div>

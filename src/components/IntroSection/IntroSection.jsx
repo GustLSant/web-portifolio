@@ -12,7 +12,7 @@ function IntroSection(props){
 
     function onSectionButtonClick(_className){
         animateScroll.scrollTo(
-            document.getElementsByClassName(_className)[0].getBoundingClientRect().top,
+            document.getElementsByClassName(_className)[0].getBoundingClientRect().top - ((_className === "projects-section") ? 59 : 65), /*  */
             {
                 duration: 1000,
                 smooth: 'easeInOutQuart'
@@ -40,8 +40,8 @@ function IntroSection(props){
                 <p className="header__logo">GS</p>
                 <nav>
                     <p onClick={()=>{onSectionButtonClick("about-me-section")}}>ABOUT ME</p>
-                    <p onClick={()=>{onSectionButtonClick("projects-section")}}>PROJECTS</p>
                     <p onClick={()=>{onSectionButtonClick("skills-section")}}>SKILLS</p>
+                    <p onClick={()=>{onSectionButtonClick("projects-section")}}>PROJECTS</p>
                     <p onClick={()=>{onSectionButtonClick("previous-xp")}}>EXPERIENCES</p>
                 </nav>
             </div>

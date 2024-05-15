@@ -89,16 +89,16 @@
 
 .project__text-button{
     padding: 10px 15px;
-    background-image: linear-gradient(to top, rgba(255,255,255, 0.125), transparent);
+    background-image: linear-gradient(to top, rgba(255,255,255, 0.12), transparent);
     flex-grow: 1;
     /* transition: backdrop-filter var(--transition-time-01); */
 }
 .project__text-button.active{
-    backdrop-filter: brightness(110%);
+    backdrop-filter: brightness(115%);
 }
 .project__text-button:hover{
     cursor: pointer;
-    backdrop-filter: brightness(110%);
+    backdrop-filter: brightness(115%);
 }
 
 .project__text{
