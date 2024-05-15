@@ -7,7 +7,7 @@ import { animateScroll } from 'react-scroll';
 import './IntroSection.css'
 
 
-function IntroSection(){
+function IntroSection(props){
 
     function onSectionButtonClick(_className){
         animateScroll.scrollTo(
@@ -19,11 +19,23 @@ function IntroSection(){
         )
     }
 
+
+    function copyTextToClipboard(_text){
+        navigator.clipboard.writeText(_text)
+        .then(() => { alert('Texto copiado para a área de transferência!'); })
+        .catch((error) => { console.error('Erro ao copiar o texto:', error); });
+    }
+
+
+    function openExternalLink(_link){
+        window.open(_link, "_blank")
+    }
+
     
     return (
-        <div className="intro-section black-section">
+        <div className="intro-section black-section" ref={props.introRef}>
             <div className="intro-section__header">
-                <p className="head__email">GustLSantDev@gmail.com</p>
+                <p className="head__email" onClick={()=>{copyTextToClipboard("GustLSantDev@gmail.com")}}>GustLSantDev@gmail.com</p>
                 <p className="header__logo">GS</p>
                 <nav>
                     <p onClick={()=>{onSectionButtonClick("about-me-section")}}>ABOUT ME</p>
@@ -43,19 +55,19 @@ function IntroSection(){
             </div>
 
             <div className="intro-section__contact">
-                <div>
+                <div onClick={()=>{openExternalLink("https://github.com/GustlSant")}}>
                     <IoLogoGithub/>
                     <p>GustLSant</p>
                     </div>
-                <div>
+                <div onClick={()=>{openExternalLink("https://www.linkedin.com/in/gustavo-lucas-santana")}}>
                     <IoLogoLinkedin/>
                     <p>Gustavo Santana</p>
                     </div>
-                <div>
+                <div onClick={()=>{copyTextToClipboard("GustLSantDev@gmail.com")}}>
                     <MdEmail/>
                     <p>GustLSantDev@gmail.com</p>
                 </div>
-                <div>
+                <div onClick={()=>{openExternalLink("https://wa.me/+5575999574545")}}>
                     <IoLogoWhatsapp/>
                     <p>+55 75 99957-4545</p>
                 </div>
