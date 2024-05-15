@@ -73,7 +73,7 @@ function Project(props){
 
                 <div className="project__text-content-container">
                     <div className="project__text-buttons-container">
-                        <div className={`project__text-button ${(currentTab === 0)?"active":""}`} onClick={()=>{setCurrentTab(0)}}>
+                        <div className={`project__text-button ${(currentTab === 0)?"active":""}`} onClick={()=>{console.log("alooo");setCurrentTab(0)}}>
                             Description
                         </div>
                         <div className={`project__text-button ${(currentTab === 1)?"active":""}`} onClick={()=>{setCurrentTab(1)}}>

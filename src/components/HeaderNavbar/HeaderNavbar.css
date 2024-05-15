@@ -1,0 +1,105 @@
+.header-navbar{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0%;
+    z-index: 99;
+    pointer-events: none;
+    color: white;
+
+    opacity: 0%;
+    animation-name: HeaderNavbarFadeIn;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+.header-navbar__bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    box-shadow: var(--box-shadow-01);
+    pointer-events: fill;
+}
+
+.header-navbar__logo{
+    font-family: 'Mea Culpa', sans-serif;
+    font-size: 1.75em;
+}
+
+.header-navbar svg{
+    font-size: 1.75em;
+}
+.header-navbar svg:hover{
+    cursor: pointer;
+}
+
+.header-navbar__menu{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -1px; /* pra nao ficar uma frestrinha entre a barra e esse menu */
+    opacity: 0%;
+
+    animation-name: HeaderNavbarMenuFadeOut;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+.header-navbar__menu.true{
+    animation-name: HeaderNavbarMenuFadeIn;
+}
+
+.header-navbar__menu > nav{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 0px;
+    height: calc(100vh - 59px); /* viewport - altura da barra - padding */
+    border-radius: 0px 0px 0px 15px;
+    pointer-events: fill;
+}
+
+.header-navbar__menu > nav > p{
+    padding: 15px 20px;
+    border-radius: 2px;
+    transition: background-color var(--transition-time-01);
+}
+.header-navbar__menu > nav > p:hover{
+    background-color: var(--focus-color-01);
+    cursor: pointer;
+}
+
+
+@keyframes HeaderNavbarFadeIn {
+    0%{
+        opacity: 0px;
+        transform: translateY(-30px);
+    }
+
+    100%{
+        opacity: 100%;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes HeaderNavbarMenuFadeOut {
+    100%{
+        opacity: 0px;
+        transform: translateX(80px);
+    }
+
+    0%{
+        opacity: 100%;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes HeaderNavbarMenuFadeIn {
+    0%{
+        opacity: 0px;
+        transform: translateX(80px);
+    }
+
+    100%{
+        opacity: 100%;
+        transform: translateX(0px);
+    }
+}

@@ -102,20 +102,11 @@
 }
 
 .project__text{
-    animation-name: TextFadeIn;
+    animation-name: FadeIn;
     animation-duration: var(--transition-time-01);
     animation-fill-mode: forwards;
 }
 .project__text::before{
     content: "❖";
     margin-right: 5px;
-}
-
-@keyframes TextFadeIn {
-    0%{
-        opacity: 0%;
-    }
-    100%{
-        opacity: 100%;
-    }
 }

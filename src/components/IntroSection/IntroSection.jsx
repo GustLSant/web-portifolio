@@ -1,8 +1,9 @@
+import { animateScroll } from 'react-scroll';
+
 import { IoLogoGithub } from "react-icons/io";
 import { IoLogoLinkedin } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 import { IoLogoWhatsapp } from "react-icons/io";
-import { animateScroll } from 'react-scroll';
 
 import './IntroSection.css'
 
