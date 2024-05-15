@@ -28,15 +28,15 @@ function ProjectsSection() {
                             "Web app that allows you to view weather information for any city in the world.",
                         ],
                         [
-                            "Full responsive",
-                            "Shows current informations and 5 days forecast.",
-                            "Shows a similar image of what the weather might be like there."
+                            "Fully responsive",
+                            "Shows current informations and 5 days forecast",
+                            "Shows a similar image of what the weather might be like there"
                         ],
                         [
                             "React",
                             "JavaScript",
                             "CSS",
-                            "HTML"
+                            "HTML",
                         ]
                     ]}
                 />
@@ -49,10 +49,11 @@ function ProjectsSection() {
                             "Web app to manage your daily and future tasks.",
                         ],
                         [
-                            "Full responsive",
-                            "Allows user to create tasks and 'step tasks' for each task.",
+                            "Fully responsive",
+                            "Allows user to create tasks and 'step tasks' for each task",
                             "Allows user to 'archive' completed tasks, for later viewing",
                             "Has a light and dark mode",
+                            "Can export and import tasks between different devices",
                             "Each 'step task' can be marked as done independtly",
                             "Has a cancel and save editing system that prevents errors"
                         ],
@@ -73,12 +74,9 @@ function ProjectsSection() {
                             "Furniture Sales LandingPage where customers can visualize products images and contact the company.",
                         ],
                         [
-                            "Full responsive",
-                            "Allows user to create tasks and 'step tasks' for each task.",
-                            "Allows user to 'archive' completed tasks, for later viewing",
-                            "Has a light and dark mode",
-                            "Each 'step task' can be marked as done independtly",
-                            "Has a cancel and save editing system that prevents errors"
+                            "Fully responsive",
+                            "Allows user visualize products in a high-resolution window",
+                            "Allows user to contact the company",
                         ],
                         [
                             "JavaScript",

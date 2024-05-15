@@ -31,7 +31,7 @@ function Project(props){
         if(isDragging){
             const deltaX = event.clientX - prevClientX;
             // const scrollSpeed = 0.01;
-            const scrollAmount = 10;
+            const scrollAmount = 3;
             
             // if(deltaX > 0){ divScreenshots.current.scrollLeft -= divScreenshots.current.offsetWidth * scrollSpeed; }
             // else{ divScreenshots.current.scrollLeft += divScreenshots.current.offsetWidth * scrollSpeed; }
