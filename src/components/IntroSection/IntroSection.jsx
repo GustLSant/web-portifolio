@@ -9,6 +9,8 @@ import './IntroSection.css'
 
 
 function IntroSection(props){
+    const lg = props.language
+
 
     function onSectionButtonClick(_className){
         animateScroll.scrollTo(
@@ -23,8 +25,8 @@ function IntroSection(props){
 
     function copyTextToClipboard(_text){
         navigator.clipboard.writeText(_text)
-        .then(() => { alert('Texto copiado para a área de transferência!'); })
-        .catch((error) => { console.error('Erro ao copiar o texto:', error); });
+        .then(() => { alert(`${(lg === "pt" ? "Texto copiado para a área de transferência!" : "Text copied to clipboard!")}`); })
+        .catch((error) => { console.error('Error on copying text:', error); });
     }
 
 
@@ -39,19 +41,19 @@ function IntroSection(props){
                 <p className="head__email" onClick={()=>{copyTextToClipboard("GustLSantDev@gmail.com")}}>GustLSantDev@gmail.com</p>
                 <p className="header__logo">GS</p>
                 <nav>
-                    <p onClick={()=>{onSectionButtonClick("about-me-section")}}>ABOUT ME</p>
-                    <p onClick={()=>{onSectionButtonClick("skills-section")}}>SKILLS</p>
-                    <p onClick={()=>{onSectionButtonClick("projects-section")}}>PROJECTS</p>
-                    <p onClick={()=>{onSectionButtonClick("previous-xp")}}>EXPERIENCES</p>
+                    <p onClick={()=>{onSectionButtonClick("about-me-section")}}> {(lg === "pt" ? "SOBRE MIM" : "ABOUT ME")}       </p>
+                    <p onClick={()=>{onSectionButtonClick("skills-section")}}>   {(lg === "pt" ? "HABILIDADES" : "SKILLS")}       </p>
+                    <p onClick={()=>{onSectionButtonClick("projects-section")}}> {(lg === "pt" ? "PROJETOS" : "PROJECTS")}        </p>
+                    <p onClick={()=>{onSectionButtonClick("previous-xp")}}>      {(lg === "pt" ? "EXPERIÊNCIAS" : "EXPERIENCES")} </p>
                 </nav>
             </div>
             
             <div className="intro-section__intro">
-                <p>Hello, I am</p>
+                <p> {(lg === "pt" ? "Olá, me chamo" : "Hello, I am")} </p>
                 <p>Gustavo Lucas Santana</p>
                 <div>
-                    <p>Front-end Developer</p>
-                    <p>Computer Science Student</p>
+                    <p> {(lg === "pt" ? "Desenvolvedor Front-end" : "Front-end Developer")} </p>
+                    <p> {(lg === "pt" ? "Estudante de Ciências da Computação" : "Computer Science Student")} </p>
                 </div>
             </div>
 

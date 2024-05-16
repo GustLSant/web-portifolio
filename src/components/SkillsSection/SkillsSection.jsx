@@ -1,10 +1,12 @@
 import "./SkillsSection.css"
 
 
-function SkillsSection(){
+function SkillsSection(props){
+    const lg = props.language
+
     return (
         <div className="skills-section">
-            <h2>My Skills</h2>
+            <h2> {(lg === "pt" ? "Habilidades" : "My Skills")} </h2>
 
             <div className="skills-section__skills-container">
                 <ul>
@@ -22,9 +24,9 @@ function SkillsSection(){
                     <li>SASS</li>
                 </ul>
                 <ul>
-                    <li>English <br /> <small>(Advanced)</small></li>
-                    <li>Portuguese <br /> <small>(Fluent)</small></li>
-                    <li>Spanish <br /> <small>(Basic)</small></li>
+                    <li> {(lg === "pt" ? "Inglês" : "English")} <br /> <small>({(lg === "pt" ? "Avançado" : "Advanced")})</small></li>
+                    <li> {(lg === "pt" ? "Português" : "Portuguese")} <br /> <small>({(lg === "pt" ? "Fluente" : "Fluent")})</small></li>
+                    <li> {(lg === "pt" ? "Espanhol" : "Spanish")} <br /> <small>({(lg === "pt" ? "Básico" : "Basic")})</small></li>
                 </ul>
             </div>
         </div>

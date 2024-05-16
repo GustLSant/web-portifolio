@@ -12,11 +12,12 @@ import ValentimScreenshot03 from "../../screenshots/valentim-landing-page/valent
 import "./ProjectsSection.css"
 
 
-function ProjectsSection() {
+function ProjectsSection(props){
+    const lg = props.language
 
     return (
         <div className="projects-section black-section">
-            <h2>My Projects</h2>
+            <h2> {(lg === "pt") ? "Meus Projetos" : "My Projects"} </h2>
             
             <div className="projects-container">
                 <Project 
@@ -25,12 +26,12 @@ function ProjectsSection() {
                     miniScreenshotsArray={[WeatherAppScreenshot01, WeatherAppScreenshot02, WeatherAppScreenshot03]}
                     contents={[
                         [
-                            "Web app that allows you to view weather information for any city in the world.",
+                            (lg === "pt") ? "Aplicativo Web que te permite visualizar informações sobre o clima de qualquer cidade do mundo." : "Web app that allows you to view weather information for any city in the world.",
                         ],
                         [
-                            "Fully responsive",
-                            "Shows current informations and 5 days forecast",
-                            "Shows a similar image of what the weather might be like there"
+                            (lg === "pt") ? "Totalmente responsivo" : "Fully responsive",
+                            (lg === "pt") ? "Mostra informações atuais e uma previsão dos próximos 5 dias" : "Shows current informations and 5 days forecast",
+                            (lg === "pt") ? "Mostra uma imagem similar de como o clima daquela região deve parecer" : "Shows a similar image of what the weather might be like there"
                         ],
                         [
                             "React",
@@ -39,6 +40,7 @@ function ProjectsSection() {
                             "HTML",
                         ]
                     ]}
+                    language={lg}
                 />
                 <Project 
                     label={"ToDo App"} 
@@ -46,16 +48,16 @@ function ProjectsSection() {
                     miniScreenshotsArray={[TodoAppScreenShot02, TodoAppScreenShot01, TodoAppScreenShot03, TodoAppScreenShot04]}
                     contents={[
                         [
-                            "Web app to manage your daily and future tasks.",
+                            (lg === "pt") ? "Aplicativo Web para administrar suas futuras e atuais tarefas" : "Web app to manage your daily and future tasks.",
                         ],
                         [
-                            "Fully responsive",
-                            "Allows user to create tasks and 'step tasks' for each task",
-                            "Allows user to 'archive' completed tasks, for later viewing",
-                            "Has a light and dark mode",
-                            "Can export and import tasks between different devices",
-                            "Each 'step task' can be marked as done independtly",
-                            "Has a cancel and save editing system that prevents errors"
+                            (lg === "pt") ? "Totalmente Responsivo" :"Fully responsive" ,
+                            (lg === "pt") ? "Permite aos usuários criar tarefas e 'subtarefas' para cada atividade" : "Allows user to create tasks and 'step tasks' for each activity",
+                            (lg === "pt") ? "Permite aos usuários arquivar tarefas concluídas, para futura visualização" : "Allows user to archive completed tasks, for later viewing",
+                            (lg === "pt") ? "Possui temas claro e escuro" : "Has a light and dark mode",
+                            (lg === "pt") ? "Pode exportar e importar dados entre diferentes dispositivos" : "Can export and import tasks between different devices",
+                            (lg === "pt") ? "Cada 'subtarefa' pode ser marcada como concluída independentemente" : "Each 'step task' can be marked as done independtly",
+                            (lg === "pt") ? "Possui um sistema de cancelar e salvar alterações para prevenir erros do usuário" : "Has a cancel and save editing system that prevents errors"
                         ],
                         [
                             "React",
@@ -64,6 +66,7 @@ function ProjectsSection() {
                             "HTML"
                         ]
                     ]}
+                    language={lg}
                 />
                 <Project 
                     label={"Furniture Sales LandingPage"} 
@@ -71,12 +74,12 @@ function ProjectsSection() {
                     miniScreenshotsArray={[ValentimScreenshot01, ValentimScreenshot03, ValentimScreenshot02]}
                     contents={[
                         [
-                            "Furniture Sales LandingPage where customers can visualize products images and contact the company.",
+                            (lg === "pt") ? "LandingPage de venda de móveis quer permite aos usuários visualizar imagens dos produtos em alta resolução e contatar a empresa responsável" : "Furniture Sales LandingPage where customers can visualize high resolution images of products and contact the company.",
                         ],
                         [
-                            "Fully responsive",
-                            "Allows user visualize products in a high-resolution window",
-                            "Allows user to contact the company",
+                            (lg === "pt") ? "Totalmente responsivo" : "Fully responsive",
+                            (lg === "pt") ? "Permite aos usuários visualizar produtos em minuatura ou numa janela de alta resolução" : "Allows user visualize products in miniature or in a high-resolution window",
+                            (lg === "pt") ? "Permite aos usuários contatar a empresa responsável" : "Allows user to contact the company",
                         ],
                         [
                             "JavaScript",
@@ -84,6 +87,7 @@ function ProjectsSection() {
                             "HTML"
                         ]
                     ]}
+                    language={lg}
                 />
             </div>
         </div>

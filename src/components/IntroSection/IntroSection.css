@@ -41,7 +41,6 @@
     display: flex;
     justify-content: end;
     flex-wrap: wrap;
-    gap: 5px;
     flex-grow: 1;
     font-family: monospace;
     font-size: 1.25em;

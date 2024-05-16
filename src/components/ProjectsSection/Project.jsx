@@ -6,6 +6,7 @@ import "./Project.css"
 function Project(props){
     const [currentTab, setCurrentTab] = React.useState(1)
     const divScreenshots = React.useRef(null)
+    const lg = props.language
     
     const[isDragging, setIsDragging] = React.useState(false);
     let prevClientX = 0;
@@ -31,7 +32,7 @@ function Project(props){
         if(isDragging){
             const deltaX = event.clientX - prevClientX;
             // const scrollSpeed = 0.01;
-            const scrollAmount = 3;
+            const scrollAmount = 2;
             
             // if(deltaX > 0){ divScreenshots.current.scrollLeft -= divScreenshots.current.offsetWidth * scrollSpeed; }
             // else{ divScreenshots.current.scrollLeft += divScreenshots.current.offsetWidth * scrollSpeed; }
@@ -68,19 +69,19 @@ function Project(props){
                             })
                         }
                     </div>
-                    <p className="project-screenshots-container__scroll-indicator">❮❮ Horizontal Scrolling ❯❯</p>
+                    <p className="project-screenshots-container__scroll-indicator">❮❮ {(lg === "pt") ? "Rolagem Horizontal" : "Horizontal Scrolling"} ❯❯</p>
                 </div>
 
                 <div className="project__text-content-container">
                     <div className="project__text-buttons-container">
-                        <div className={`project__text-button ${(currentTab === 0)?"active":""}`} onClick={()=>{console.log("alooo");setCurrentTab(0)}}>
-                            Description
+                        <div className={`project__text-button ${(currentTab === 0)?"active":""}`} onClick={()=>{setCurrentTab(0)}}>
+                            {(lg === "pt") ? "Descrição" : "Description"}
                         </div>
                         <div className={`project__text-button ${(currentTab === 1)?"active":""}`} onClick={()=>{setCurrentTab(1)}}>
-                            Features
+                            {(lg === "pt") ? "Funcionalidades" : "Features"}
                         </div>
                         <div className={`project__text-button ${(currentTab === 2)?"active":""}`} onClick={()=>{setCurrentTab(2)}}>
-                            Technologies
+                            {(lg === "pt") ? "Tecnologias" : "Technologies"}
                         </div>
                     </div>
                     {
@@ -115,7 +116,8 @@ Project.propTypes = {
     label: PropTypes.string,
     link: PropTypes.string,
     miniScreenshotsArray: PropTypes.array,
-    contents: PropTypes.array
+    contents: PropTypes.array,
+    language: PropTypes.string
 }
 
 export default Project;

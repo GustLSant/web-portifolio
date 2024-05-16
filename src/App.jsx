@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from "prop-types"
+import { useParams } from "react-router-dom"
 
 import HeaderNavbar from './components/HeaderNavbar/HeaderNavbar';
 import IntroSection from './components/IntroSection/IntroSection';
@@ -10,9 +12,10 @@ import AboutMeSection from './components/AboutMeSection/AboutMeSection';
 import './App.css';
 
 
-function App(){
+function App(props){
   const [showHeaderBar, setShowHeaderBar] = React.useState(false)
   const introRef = React.useRef(null)
+  const { language } = useParams()
 
 
   function handleScroll(){
@@ -25,20 +28,20 @@ function App(){
   }, []);
 
 
-
-
-
-
   return (
     <div className="app">
-      <IntroSection introRef={introRef} />
-      <SkillsSection />
-      {(showHeaderBar) && <HeaderNavbar />}
-      <ProjectsSection />
-      <PreviousXP />
-      <AboutMeSection />
+      <IntroSection introRef={introRef} language={language} />
+      <SkillsSection                    language={language} />
+      {(showHeaderBar) && <HeaderNavbar language={language} />}
+      <ProjectsSection                  language={language} />
+      <PreviousXP                       language={language} />
+      <AboutMeSection                   language={language} />
     </div>
   );
+}
+
+App.propTypes = {
+  language: PropTypes.string
 }
 
 export default App;
