@@ -31,7 +31,7 @@
     font-weight: 300;
     padding: 10px 15px;
     background-image: linear-gradient(to top, rgba(255,255,255, 0.125), transparent);
-    /* flex-grow: 1; */
+    user-select: none;
 }
 .about-me__contact-button:hover{
     cursor: pointer;
