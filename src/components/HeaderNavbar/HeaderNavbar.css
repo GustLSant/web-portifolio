@@ -64,6 +64,7 @@
     padding: 15px 20px;
     border-radius: 2px;
     transition: background-color var(--transition-time-01);
+    user-select: none;
 }
 .header-navbar__menu > nav > p:hover{
     background-color: var(--focus-color-01);
