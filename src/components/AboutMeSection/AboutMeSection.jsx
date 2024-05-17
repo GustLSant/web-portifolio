@@ -15,7 +15,7 @@ function AboutMeSection(props){
 
     return (
         <div className="about-me-section black-section">
-            <h2>About me</h2>
+            <h2> {(lg === "pt") ? "Sobre mim" : "About me"} </h2>
             <div>
                 <img src={ProfilePicture} alt="Foto pessoal" />
                 <div className="about-me-section__texts-container">
