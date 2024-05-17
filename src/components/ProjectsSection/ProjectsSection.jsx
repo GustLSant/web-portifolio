@@ -19,6 +19,8 @@ function ProjectsSection(props){
         <div className="projects-section black-section">
             <h2> {(lg === "pt") ? "Meus Projetos" : "My Projects"} </h2>
             
+            <p className="projects-section__hint-text"> {(lg === "pt") ? "clique nas imagens para abrir os apps" : "click on images to open projects"}</p>
+            
             <div className="projects-container">
                 <Project 
                     label={"Weather App"} 

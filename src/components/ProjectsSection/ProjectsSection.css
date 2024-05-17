@@ -6,11 +6,16 @@
     padding: 40px 20px;
 }
 
-
 .projects-container{
     display: flex;
     flex-direction: column;
     align-items: stretch;
     justify-content: center;
     gap: 30px;
+}
+
+.projects-section__hint-text{
+    margin-top: -10px;
+    opacity: 50%;
+    font-size: 0.75em;
 }

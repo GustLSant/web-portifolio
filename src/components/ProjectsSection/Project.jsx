@@ -69,7 +69,7 @@ function Project(props){
                             })
                         }
                     </div>
-                    <p className="project-screenshots-container__scroll-indicator">❮❮ {(lg === "pt") ? "Rolagem Horizontal" : "Horizontal Scrolling"} ❯❯</p>
+                    <p className="project-screenshots-container__scroll-indicator">❮❮ {(lg === "pt") ? "Possui Rolagem Horizontal" : "Has Horizontal Scrolling"} ❯❯</p>
                 </div>
 
                 <div className="project__text-content-container">
