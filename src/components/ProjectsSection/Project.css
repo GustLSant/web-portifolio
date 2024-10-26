@@ -44,6 +44,7 @@
 }
 
 .project__div-scroll-screenshots{
+    position: relative;
     display: flex;
     gap: 5px;
     overflow-x: scroll;
@@ -52,14 +53,25 @@
     box-shadow: var(--box-shadow-01);
     user-select: none;
 }
-.project__div-scroll-screenshots:hover{ cursor: grab; }
-.project__div-scroll-screenshots.active:hover{ cursor: grabbing; }
+/* .project__div-scroll-screenshots:hover{ cursor: pointer; } /* grab */
+/* .project__div-scroll-screenshots.active:hover{ cursor: pointer; } /* grabbing */
 
 .project-screenshot-miniature{
     width: 100%;
     border-radius: 5px;
     z-index: 9;
     transition: filter var(--transition-time-01);
+}
+
+.screenshot-clickable-area{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: calc(100% - 4px); /* para nao pegar no espaco que fica entre a imagem e a barra de rolagem */
+    z-index: 10;
+}
+.screenshot-clickable-area:hover{
+    cursor: pointer;
 }
 
 .project-screenshots-container__scroll-indicator{

@@ -10,20 +10,11 @@ function Project(props){
     
     const[isDragging, setIsDragging] = React.useState(false);
     let prevClientX = 0;
-    let wasScrolled = false
 
 
-    function handleMouseDown(event){
-        setIsDragging(true)
-        wasScrolled = false
-    }
+    function handleMouseDown(event){ setIsDragging(true) }
 
-
-    function handleMouseUp(event){
-        setIsDragging(false)
-        if(!wasScrolled){ handleClickRedirect() }
-    }
-
+    function handleMouseUp(event){ setIsDragging(false) }
 
     function handleMouseLeave(event){ setIsDragging(false) }
 
@@ -38,7 +29,6 @@ function Project(props){
             // else{ divScreenshots.current.scrollLeft += divScreenshots.current.offsetWidth * scrollSpeed; }
             if(deltaX > 0){ divScreenshots.current.scrollLeft -= scrollAmount; }
             else{ divScreenshots.current.scrollLeft += scrollAmount; }
-            wasScrolled = true
             event.preventDefault();
 
             prevClientX = event.clientX;
@@ -64,12 +54,13 @@ function Project(props){
                         {
                             props.miniScreenshotsArray.map((item, idx)=>{
                                 return(
-                                    <img key={idx} src={item} className="project-screenshot-miniature" alt="project screenshot" />
+                                    <img key={idx} src={item} draggable="false" className="project-screenshot-miniature" alt="project screenshot" />
                                 )
                             })
                         }
+                        <div className="screenshot-clickable-area" style={{width: `calc(${100 * props.miniScreenshotsArray.length}% + ${5 * (props.miniScreenshotsArray.length-1)}px)`}} onClick={handleClickRedirect}></div>
                     </div>
-                    <p className="project-screenshots-container__scroll-indicator">❮❮ {(lg === "pt") ? "Possui Rolagem Horizontal" : "Has Horizontal Scrolling"} ❯❯</p>
+                    <p className="project-screenshots-container__scroll-indicator">❮❮ {(lg === "pt") ? "Possui Rolagem Horizontal" : "Horizontal Scrolling"} ❯❯</p>
                 </div>
 
                 <div className="project__text-content-container">
