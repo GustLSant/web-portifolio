@@ -12,15 +12,15 @@ function SkillsSection(props){
                 <ul>
                     <li>React</li>
                     <li>JavaScript</li>
+                    <li>TypeScript</li>
                     <li>CSS</li>
                     <li>HTML</li>
-                    <li>Github</li>
                 </ul>
                 <ul>
+                    <li>TailwindCSS</li>
+                    <li>Jest</li>
                     <li>Figma</li>
-                    <li>TypeScript</li>
-                    <li>PostgreSQL</li>
-                    <li>Python</li>
+                    <li>Github</li>
                     <li>SASS</li>
                 </ul>
                 <ul>
