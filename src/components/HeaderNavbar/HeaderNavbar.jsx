@@ -6,20 +6,23 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import "./HeaderNavbar.css"
 
 
+export function scrollTo(_className){
+    const navbarHeight = 59
+    const scrollOffset = (_className === "skills-section") ? 0 : navbarHeight // the navbar only shows when scroll beyond the text of the skills section
+
+    animateScroll.scrollTo(
+        document.getElementsByClassName(_className)[0].getBoundingClientRect().top - (scrollOffset) + window.scrollY,
+        {
+            duration: 1000,
+            smooth: 'easeInOutQuart'
+        }
+    )
+}
+
+
 function HeaderNavbar(props){
     const [isOpen, setIsOpen] = React.useState(false)
     const lg = props.language
-
-
-    function onSectionButtonClick(_className){
-        animateScroll.scrollTo(
-            document.getElementsByClassName(_className)[0].getBoundingClientRect().top - ((_className === "projects-section") ? 59 : 65) + window.scrollY,
-            {
-                duration: 1000,
-                smooth: 'easeInOutQuart'
-            }
-        )
-    }
 
 
     return (
@@ -33,11 +36,11 @@ function HeaderNavbar(props){
             {
                 <div className={`header-navbar__menu ${(isOpen)}`} >
                     <nav className="black-section" style={{pointerEvents: (isOpen) ? "fill" : "none"}}>
-                        <p onClick={()=>{onSectionButtonClick("skills-section")}}>       {(lg === "pt" ? "HABILIDADES" : "SKILLS")}        </p>
-                        <p onClick={()=>{onSectionButtonClick("projects-section")}}>     {(lg === "pt" ? "PROJETOS" : "PROJECTS")}         </p>
-                        <p onClick={()=>{onSectionButtonClick("previous-xp")}}>          {(lg === "pt" ? "EXPERIÊNCIAS" : "EXPERIENCES")}  </p>
-                        <p onClick={()=>{onSectionButtonClick("certificates-section")}}> {(lg === "pt" ? "CERTIFICADOS" : "CERTIFICATES")} </p>
-                        {/* <p onClick={()=>{onSectionButtonClick("about-me-section")}}>     {(lg === "pt" ? "SOBRE MIM" : "ABOUT ME")}        </p> */}
+                        <p onClick={()=>{scrollTo("skills-section")}}>       {(lg === "pt" ? "HABILIDADES" : "SKILLS")}        </p>
+                        <p onClick={()=>{scrollTo("projects-section")}}>     {(lg === "pt" ? "PROJETOS" : "PROJECTS")}         </p>
+                        <p onClick={()=>{scrollTo("previous-xp")}}>          {(lg === "pt" ? "EXPERIÊNCIAS" : "EXPERIENCES")}  </p>
+                        <p onClick={()=>{scrollTo("certificates-section")}}> {(lg === "pt" ? "CERTIFICADOS" : "CERTIFICATES")} </p>
+                        <p onClick={()=>{scrollTo("about-me-section")}}>     {(lg === "pt" ? "SOBRE MIM" : "ABOUT ME")}        </p>
                     </nav>
                 </div>
             }

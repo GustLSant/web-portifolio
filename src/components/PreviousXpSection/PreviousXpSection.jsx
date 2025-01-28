@@ -5,7 +5,7 @@ export default function PreviousXpSection(props){
     const lg = props.language
 
     return (
-        <section className="previous-xp">
+        <section className="previous-xp section">
             <h2>{(lg === "pt") ? "Experiências Anteriores" : "Previous Experiences"}</h2>
 
             <p className="hint-text">{(lg === "pt") ? "(dd/mm/aaaa)" : "(dd/mm/yyyy)"}</p>

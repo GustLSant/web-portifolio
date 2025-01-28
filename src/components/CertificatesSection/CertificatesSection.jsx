@@ -5,7 +5,7 @@ export default function CertificatesSection({language}){
 
 
     return(
-        <section className="certificates-section black-section">
+        <section className="certificates-section section black-section">
             <h2>{(language === 'pt' ? 'Certificados' : 'Certificates')}</h2>
 
             <div>

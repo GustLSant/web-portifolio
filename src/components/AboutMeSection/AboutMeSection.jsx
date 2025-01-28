@@ -14,7 +14,7 @@ function AboutMeSection(props){
     }
 
     return (
-        <section className="about-me-section">
+        <section className="about-me-section section">
             <h2> {(lg === "pt") ? "Sobre mim" : "About me"} </h2>
             <div>
                 <img src={ProfilePicture} alt="Foto pessoal" />

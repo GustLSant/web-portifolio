@@ -20,7 +20,8 @@ function App(props){
 
 
   function handleScroll(){
-    setShowHeaderBar( window.scrollY > introRef.current.getBoundingClientRect().height )
+    const skillSectionPadding = 40 // margin to only show the navbar when scroll beyond the skill session text
+    setShowHeaderBar( window.scrollY > introRef.current.getBoundingClientRect().height+skillSectionPadding )
   };
 
 

@@ -28,6 +28,10 @@ body {
   scroll-behavior: smooth;
 }
 
+.section{
+  padding: 40px 25px;
+}
+
 .black-section{
   background-color: black;
   background-image: radial-gradient(circle at 0% 75%, rgba(255,255,255, 0.1), transparent);

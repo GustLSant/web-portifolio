@@ -30,12 +30,19 @@
     font-size: 1.15em;
     font-weight: 300;
     padding: 10px 15px;
-    background-image: linear-gradient(to top, rgba(255,255,255, 0.125), transparent);
+    /* background-image: linear-gradient(to top, rgba(255,255,255, 0.125), transparent); versao com o fundo da section preto */
+    background-color: black;
+    background-image: radial-gradient(circle at 20% 100%, rgba(255, 255, 255, 0.2), transparent);
+    border-radius: 2px;
+    box-shadow: 3px 3px 3px rgba(0,0,0, 0.25);
+    color: white;
     user-select: none;
 }
 .about-me__contact-button:hover{
     cursor: pointer;
-    backdrop-filter: brightness(120%);
+    /* backdrop-filter: brightness(120%); versao com o fundo da section preto */
+    background-color: rgba(0,0,0, 0.975);
+    background-image: radial-gradient(circle at 20% 100%, rgba(255, 255, 255, 0.3), transparent);
 }
 
 @media (max-width: 720px) {

@@ -19,7 +19,7 @@ function ProjectsSection(props){
     const lg = props.language
 
     return (
-        <section className="projects-section black-section">
+        <section className="projects-section section black-section">
             <h2> {(lg === "pt") ? "Meus Projetos Pessoais" : "My Personal Projects"} </h2>
             
             <p className="hint-text"> {(lg === "pt") ? "clique nas imagens para abrir os aplicativos" : "click on the images to open the projects"}</p>

@@ -1,4 +1,4 @@
-import { animateScroll } from 'react-scroll';
+import { scrollTo } from '../HeaderNavbar/HeaderNavbar'
 
 import { IoLogoGithub } from "react-icons/io";
 import { IoLogoLinkedin } from "react-icons/io";
@@ -10,17 +10,6 @@ import './IntroSection.css'
 
 function IntroSection(props){
     const lg = props.language
-
-
-    function onSectionButtonClick(_className){
-        animateScroll.scrollTo(
-            document.getElementsByClassName(_className)[0].getBoundingClientRect().top - ((_className === "projects-section") ? 59 : 65), /*  */
-            {
-                duration: 1000,
-                smooth: 'easeInOutQuart'
-            }
-        )
-    }
 
 
     function copyTextToClipboard(_text){
@@ -41,10 +30,11 @@ function IntroSection(props){
                 <p className="head__email" onClick={()=>{copyTextToClipboard("GustLSantDev@gmail.com")}}>GustLSantDev@gmail.com</p>
                 <p className="header__logo">GS</p>
                 <nav>
-                    <p onClick={()=>{onSectionButtonClick("about-me-section")}}> {(lg === "pt" ? "SOBRE MIM" : "ABOUT ME")}       </p>
-                    <p onClick={()=>{onSectionButtonClick("skills-section")}}>   {(lg === "pt" ? "HABILIDADES" : "SKILLS")}       </p>
-                    <p onClick={()=>{onSectionButtonClick("projects-section")}}> {(lg === "pt" ? "PROJETOS" : "PROJECTS")}        </p>
-                    <p onClick={()=>{onSectionButtonClick("previous-xp")}}>      {(lg === "pt" ? "EXPERIÊNCIAS" : "EXPERIENCES")} </p>
+                        <p onClick={()=>{scrollTo("skills-section")}}>       {(lg === "pt" ? "HABILIDADES" : "SKILLS")}        </p>
+                        <p onClick={()=>{scrollTo("projects-section")}}>     {(lg === "pt" ? "PROJETOS" : "PROJECTS")}         </p>
+                        <p onClick={()=>{scrollTo("previous-xp")}}>          {(lg === "pt" ? "EXPERIÊNCIAS" : "EXPERIENCES")}  </p>
+                        <p onClick={()=>{scrollTo("certificates-section")}}> {(lg === "pt" ? "CERTIFICADOS" : "CERTIFICATES")} </p>
+                        {/* <p onClick={()=>{onSectionButtonClick("about-me-section")}}>     {(lg === "pt" ? "SOBRE MIM" : "ABOUT ME")}        </p> */}
                 </nav>
             </div>
             
