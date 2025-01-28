@@ -36,7 +36,7 @@ function IntroSection(props){
 
     
     return (
-        <div className="intro-section black-section" ref={props.introRef}>
+        <section className="intro-section black-section" ref={props.introRef}>
             <div className="intro-section__header">
                 <p className="head__email" onClick={()=>{copyTextToClipboard("GustLSantDev@gmail.com")}}>GustLSantDev@gmail.com</p>
                 <p className="header__logo">GS</p>
@@ -75,7 +75,7 @@ function IntroSection(props){
                     <p>+55 75 99957-4545</p>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 

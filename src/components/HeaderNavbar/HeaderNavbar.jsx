@@ -33,10 +33,11 @@ function HeaderNavbar(props){
             {
                 <div className={`header-navbar__menu ${(isOpen)}`} >
                     <nav className="black-section" style={{pointerEvents: (isOpen) ? "fill" : "none"}}>
-                        <p onClick={()=>{onSectionButtonClick("about-me-section")}}> {(lg === "pt" ? "SOBRE MIM" : "ABOUT ME")}       </p>
-                        <p onClick={()=>{onSectionButtonClick("skills-section")}}>   {(lg === "pt" ? "HABILIDADES" : "SKILLS")}       </p>
-                        <p onClick={()=>{onSectionButtonClick("projects-section")}}> {(lg === "pt" ? "PROJETOS" : "PROJECTS")}        </p>
-                        <p onClick={()=>{onSectionButtonClick("previous-xp")}}>      {(lg === "pt" ? "EXPERIÊNCIAS" : "EXPERIENCES")} </p>
+                        <p onClick={()=>{onSectionButtonClick("skills-section")}}>       {(lg === "pt" ? "HABILIDADES" : "SKILLS")}        </p>
+                        <p onClick={()=>{onSectionButtonClick("projects-section")}}>     {(lg === "pt" ? "PROJETOS" : "PROJECTS")}         </p>
+                        <p onClick={()=>{onSectionButtonClick("previous-xp")}}>          {(lg === "pt" ? "EXPERIÊNCIAS" : "EXPERIENCES")}  </p>
+                        <p onClick={()=>{onSectionButtonClick("certificates-section")}}> {(lg === "pt" ? "CERTIFICADOS" : "CERTIFICATES")} </p>
+                        {/* <p onClick={()=>{onSectionButtonClick("about-me-section")}}>     {(lg === "pt" ? "SOBRE MIM" : "ABOUT ME")}        </p> */}
                     </nav>
                 </div>
             }

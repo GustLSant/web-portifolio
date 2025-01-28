@@ -6,7 +6,8 @@ import HeaderNavbar from './components/HeaderNavbar/HeaderNavbar';
 import IntroSection from './components/IntroSection/IntroSection';
 import SkillsSection from './components/SkillsSection/SkillsSection';
 import ProjectsSection from './components/ProjectsSection/ProjectsSection';
-import PreviousXP from './components/PreviousXP/PreviousXP';
+import PreviousXpSection from './components/PreviousXpSection/PreviousXpSection';
+import CertificatesSection from './components/CertificatesSection/CertificatesSection';
 import AboutMeSection from './components/AboutMeSection/AboutMeSection';
 
 import './App.css';
@@ -34,7 +35,8 @@ function App(props){
       <SkillsSection                    language={language} />
       {(showHeaderBar) && <HeaderNavbar language={language} />}
       <ProjectsSection                  language={language} />
-      <PreviousXP                       language={language} />
+      <PreviousXpSection                language={language} />
+      <CertificatesSection              language={language} />
       <AboutMeSection                   language={language} />
     </div>
   );

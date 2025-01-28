@@ -19,10 +19,10 @@ function ProjectsSection(props){
     const lg = props.language
 
     return (
-        <div className="projects-section black-section">
-            <h2> {(lg === "pt") ? "Meus Projetos" : "My Projects"} </h2>
+        <section className="projects-section black-section">
+            <h2> {(lg === "pt") ? "Meus Projetos Pessoais" : "My Personal Projects"} </h2>
             
-            <p className="projects-section__hint-text"> {(lg === "pt") ? "clique nas imagens para abrir os apps" : "click on images to open projects"}</p>
+            <p className="hint-text"> {(lg === "pt") ? "clique nas imagens para abrir os aplicativos" : "click on the images to open the projects"}</p>
             
             <div className="projects-container">
             <Project 
@@ -47,28 +47,6 @@ function ProjectsSection(props){
                             "JavaScript",
                             "CSS",
                             "HTML"
-                        ]
-                    ]}
-                    language={lg}
-                />
-                <Project 
-                    label={"Weather App"} 
-                    link={"https://weather-app-gustlsant.vercel.app/"} 
-                    miniScreenshotsArray={[WeatherAppScreenshot01, WeatherAppScreenshot02, WeatherAppScreenshot03]}
-                    contents={[
-                        [
-                            (lg === "pt") ? "Aplicativo Web que te permite visualizar informações sobre o clima de qualquer cidade do mundo." : "Web app that allows you to view weather information for any city in the world.",
-                        ],
-                        [
-                            (lg === "pt") ? "Totalmente responsivo" : "Fully responsive",
-                            (lg === "pt") ? "Mostra informações atuais e uma previsão dos próximos 5 dias" : "Shows current informations and 5 days forecast",
-                            (lg === "pt") ? "Mostra uma imagem similar de como o clima daquela região deve parecer" : "Shows a similar image of what the weather might be like there"
-                        ],
-                        [
-                            "React",
-                            "JavaScript",
-                            "CSS",
-                            "HTML",
                         ]
                     ]}
                     language={lg}
@@ -102,6 +80,28 @@ function ProjectsSection(props){
                     language={lg}
                 />
                 <Project 
+                    label={"Weather App"} 
+                    link={"https://weather-app-gustlsant.vercel.app/"} 
+                    miniScreenshotsArray={[WeatherAppScreenshot01, WeatherAppScreenshot02, WeatherAppScreenshot03]}
+                    contents={[
+                        [
+                            (lg === "pt") ? "Aplicativo Web que te permite visualizar informações sobre o clima de qualquer cidade do mundo." : "Web app that allows you to view weather information for any city in the world.",
+                        ],
+                        [
+                            (lg === "pt") ? "Totalmente responsivo" : "Fully responsive",
+                            (lg === "pt") ? "Mostra informações atuais e uma previsão dos próximos 5 dias" : "Shows current informations and 5 days forecast",
+                            (lg === "pt") ? "Mostra uma imagem similar de como o clima daquela região deve parecer" : "Shows a similar image of what the weather might be like there"
+                        ],
+                        [
+                            "React",
+                            "JavaScript",
+                            "CSS",
+                            "HTML",
+                        ]
+                    ]}
+                    language={lg}
+                />
+                <Project 
                     label={"Furniture Sales LandingPage"} 
                     link={"https://projeto-site-planejados.vercel.app/"} 
                     miniScreenshotsArray={[ValentimScreenshot01, ValentimScreenshot03, ValentimScreenshot02]}
@@ -123,7 +123,7 @@ function ProjectsSection(props){
                     language={lg}
                 />
             </div>
-        </div>
+        </section>
     );
 }
 

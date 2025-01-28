@@ -14,7 +14,7 @@ function AboutMeSection(props){
     }
 
     return (
-        <div className="about-me-section black-section">
+        <section className="about-me-section">
             <h2> {(lg === "pt") ? "Sobre mim" : "About me"} </h2>
             <div>
                 <img src={ProfilePicture} alt="Foto pessoal" />
@@ -30,7 +30,7 @@ function AboutMeSection(props){
                     <p className="about-me__contact-button" onClick={onClickContact}> {(lg === "pt") ? "CONTATO" : "CONTACT"} </p>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 

@@ -5,7 +5,7 @@ function SkillsSection(props){
     const lg = props.language
 
     return (
-        <div className="skills-section">
+        <section className="skills-section">
             <h2> {(lg === "pt" ? "Habilidades" : "My Skills")} </h2>
 
             <div className="skills-section__skills-container">
@@ -29,7 +29,7 @@ function SkillsSection(props){
                     <li> {(lg === "pt" ? "Espanhol" : "Spanish")} <br /> <small>({(lg === "pt" ? "Básico" : "Basic")})</small></li>
                 </ul>
             </div>
-        </div>
+        </section>
     );
 }
 

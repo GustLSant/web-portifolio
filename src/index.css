@@ -41,6 +41,12 @@ h2{
   text-align: center;
 }
 
+.hint-text{
+  text-align: center;
+  opacity: 50%;
+  font-size: 0.75em;
+}
+
 .centered-text{
   text-align: center;
 }
@@ -67,6 +73,20 @@ h2{
   background: rgba(0,0,0, 0.6);
 }
 
+ul{
+  list-style-type:  "❖"; /*➤ ➢ ♦ ◈  ⧫ ❖*/
+}
+
+li{
+  padding: 3px 0px 3px 5px;
+}
+
+a{
+  color: white;
+}
+a:visited{
+  color: white;
+}
 
 @keyframes FadeIn{
   0%{
