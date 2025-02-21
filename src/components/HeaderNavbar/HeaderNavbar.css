@@ -42,14 +42,18 @@
     display: flex;
     justify-content: flex-end;
     margin-top: -1px; /* pra nao ficar uma frestrinha entre a barra e esse menu */
+    
     opacity: 0%;
+    transform: translateX(80px);
 
-    animation-name: HeaderNavbarMenuFadeOut;
     animation-duration: 0.2s;
     animation-fill-mode: forwards;
 }
 .header-navbar__menu.true{
     animation-name: HeaderNavbarMenuFadeIn;
+}
+.header-navbar__menu.false{
+    animation-name: HeaderNavbarMenuFadeOut;
 }
 
 .header-navbar__menu > nav{

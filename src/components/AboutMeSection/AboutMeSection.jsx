@@ -22,11 +22,11 @@ function AboutMeSection(props){
                     <p>
                         {   
                             (lg === "pt") ? 
-                            "Olá, me chamo Gustavo, desenvolvedor um web Front-end focado em transformar conceitos em código. Especializado em ReactJS, JavaScript, CSS e HTML. Comprometido com design responsivo e desempenho otimizado. Autodidata e sempre em busca de desafios inovadores." : 
-                            "Hello, I am Gustavo, a Front-end web developer focused on transforming concepts into code. Specialized in ReactJS, JavaScript, CSS and HTML. Committed to responsive design and optimized performance. Autodidact and always looking for innovative challenges."
+                            "Olá, me chamo Gustavo, sou um desenvolvedor web Front-end focado em qualidade de código, boas práticas e colaboração eficiente. Sou responsável e comprometido com entregas legíveis e escaláveis. Possuo uma comunicação clara e objetiva, sou autodidata e estou sempre disposto a superar problemas." : 
+                            "Hello, my name is Gustavo. I’m a Front-end web developer focused on code quality, best practices, and efficient collaboration. I am responsible and committed to delivering readable and scalable solutions. I have clear and objective communication skills, I’m self-taught, and always willing to overcome challenges."
                         }
                     </p>
-                    <p>{(lg === "pt") ? "Vamos construir algo extraordinário juntos!" : "Let's build something extraordinary together!"}</p>
+                    {/* <p>{(lg === "pt") ? "Vamos construir algo extraordinário juntos!" : "Let's build something extraordinary together!"}</p> */}
                     <p className="about-me__contact-button" onClick={onClickContact}> {(lg === "pt") ? "CONTATO" : "CONTACT"} </p>
                 </div>
             </div>
@@ -35,3 +35,5 @@ function AboutMeSection(props){
 }
 
 export default AboutMeSection;
+
+// "Olá, me chamo Gustavo, sou desenvolvedor web Front-end focado em transformar conceitos em código. Especializado em ReactJS, JavaScript, CSS e HTML. Comprometido com design responsivo e desempenho otimizado. Autodidata e sempre em busca de desafios inovadores." : 

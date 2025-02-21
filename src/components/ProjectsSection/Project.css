@@ -87,6 +87,7 @@
     flex-direction: column;
     gap: 10px;
     max-width: 410px;
+    flex-grow: 1; /* para ocupar sempre o maximo de espaço dentro da div, mas sem ultrapassar o 410px */
 }
 
 .project__text-buttons-container{

@@ -21,7 +21,7 @@ export function scrollTo(_className){
 
 
 function HeaderNavbar(props){
-    const [isOpen, setIsOpen] = React.useState(false)
+    const [isOpen, setIsOpen] = React.useState('') // comeca com esse valor falsy para nao executar a animacao de fadeOut, quando clicar no botao vai mudar para true ou false normalmente
     const lg = props.language
 
 
